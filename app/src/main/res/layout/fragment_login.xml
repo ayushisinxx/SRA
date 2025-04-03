@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_grey"
+    android:padding="20dp">
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- User ID / Email Input -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User ID or Email"
+        android:backgroundTint="@color/grey"
+        android:textColorHint="@color/dark_green"
+        android:textColor="@color/black"
+        android:padding="12dp"/>
+
+    <!-- Password Input -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:backgroundTint="@color/grey"
+        android:textColorHint="@color/dark_green"
+        android:textColor="@color/black"
+        android:padding="12dp"
+        android:inputType="textPassword"/>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:backgroundTint="@color/light_green"
+        android:textColor="@color/dark_green"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Not Registered Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not a registered user?"
+        android:textSize="14sp"
+        android:textColor="@color/grey"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Signup Button -->
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:backgroundTint="@color/grey"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="5dp"/>
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- App Name at Bottom Center -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Recycling Assistant"
+        android:textSize="14sp"
+        android:textColor="@color/grey"
+        android:fontFamily="sans-serif"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"/>
+</LinearLayout>

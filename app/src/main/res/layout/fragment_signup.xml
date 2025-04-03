@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:padding="20dp">
+
+        <!-- Name Input -->
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:backgroundTint="@color/grey"
+            android:textColorHint="@color/dark_green"
+            android:textColor="@color/black"
+            android:padding="12dp"/>
+
+        <!-- Age Input -->
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            android:backgroundTint="@color/grey"
+            android:textColorHint="@color/dark_green"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            android:inputType="number"/>
+
+        <!-- Email Input -->
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Email ID"
+            android:backgroundTint="@color/grey"
+            android:textColorHint="@color/dark_green"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            android:inputType="textEmailAddress"/>
+
+        <!-- Country Input -->
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Country"
+            android:backgroundTint="@color/grey"
+            android:textColorHint="@color/dark_green"
+            android:textColor="@color/black"
+            android:padding="12dp"/>
+
+        <!-- Urban or Rural -->
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Urban or Rural"
+            android:backgroundTint="@color/grey"
+            android:textColorHint="@color/dark_green"
+            android:textColor="@color/black"
+            android:padding="12dp"/>
+
+        <!-- City Input -->
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="City"
+            android:backgroundTint="@color/grey"
+            android:textColorHint="@color/dark_green"
+            android:textColor="@color/black"
+            android:padding="12dp"/>
+
+        <!-- Postal Code Input -->
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Postal Code"
+            android:backgroundTint="@color/grey"
+            android:textColorHint="@color/dark_green"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            android:inputType="number"/>
+
+        <!-- Password Input -->
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:backgroundTint="@color/grey"
+            android:textColorHint="@color/dark_green"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            android:inputType="textPassword"/>
+
+        <!-- Signup Button -->
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:backgroundTint="@color/light_green"
+            android:textColor="@color/dark_green"
+            android:layout_gravity="center"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+
+    <!-- App Name at Bottom Center -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Recycling Assistant"
+        android:textSize="14sp"
+        android:textColor="@color/grey"
+        android:fontFamily="sans-serif"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>
