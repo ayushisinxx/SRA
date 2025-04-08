@@ -23,19 +23,10 @@
             android:textColor="@color/black"
             android:padding="12dp"/>
 
-        <!-- Age Input -->
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Age"
-            android:backgroundTint="@color/grey"
-            android:textColorHint="@color/dark_green"
-            android:textColor="@color/black"
-            android:padding="12dp"
-            android:inputType="number"/>
 
         <!-- Email Input -->
         <EditText
+            android:id="@+id/btn_email"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Email ID"
@@ -55,15 +46,6 @@
             android:textColor="@color/black"
             android:padding="12dp"/>
 
-        <!-- Urban or Rural -->
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Urban or Rural"
-            android:backgroundTint="@color/grey"
-            android:textColorHint="@color/dark_green"
-            android:textColor="@color/black"
-            android:padding="12dp"/>
 
         <!-- City Input -->
         <EditText
@@ -75,19 +57,11 @@
             android:textColor="@color/black"
             android:padding="12dp"/>
 
-        <!-- Postal Code Input -->
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Postal Code"
-            android:backgroundTint="@color/grey"
-            android:textColorHint="@color/dark_green"
-            android:textColor="@color/black"
-            android:padding="12dp"
-            android:inputType="number"/>
+
 
         <!-- Password Input -->
         <EditText
+            android:id="@+id/btn_psw"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Password"

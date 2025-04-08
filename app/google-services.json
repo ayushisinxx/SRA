@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "280407373580",
+    "project_id": "sra-project-c7a66",
+    "storage_bucket": "sra-project-c7a66.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280407373580:android:06b40b116dd85698523b29",
+        "android_client_info": {
+          "package_name": "com.example.sra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqzWn9RQPCPG5fxAFKmwV93sIFlXg20Sw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loginRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -15,6 +17,7 @@
 
     <!-- User ID / Email Input -->
     <EditText
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="User ID or Email"
@@ -25,6 +28,7 @@
 
     <!-- Password Input -->
     <EditText
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -48,6 +52,7 @@
 
     <!-- Not Registered Text -->
     <TextView
+        android:id="@+id/text_not_registered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Not a registered user?"
@@ -76,6 +81,7 @@
 
     <!-- App Name at Bottom Center -->
     <TextView
+        android:id="@+id/appNameBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Smart Recycling Assistant"
@@ -85,3 +91,4 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"/>
 </LinearLayout>
+</layout>
