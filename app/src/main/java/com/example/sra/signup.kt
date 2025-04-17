@@ -1,47 +1,70 @@
-package com.example.sra
+package com.example.sra.signup
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.example.sra.R
+import com.example.sra.databinding.FragmentSignupBinding
+import com.example.sra.databinding.SignupBinding
 import com.example.sra.login.login
-import com.google.firebase.Firebase
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 
+
+import com.google.firebase.auth.FirebaseAuth
 
 class signup : Fragment() {
 
+    private var _binding: SignupBinding? = null
+    private val binding get() = _binding!!
     private lateinit var auth: FirebaseAuth
-
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-            reload()
-        }
-    }
-
-    private fun reload() {
-        TODO("Not yet implemented")
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signup, container, false)
-        // Initialize Firebase Auth
-        auth = Firebase.auth
+        _binding = SignupBinding.inflate(inflater, container, false)
+//        _binding = FragmentSignupBinding.infl
+        auth = FirebaseAuth.getInstance()
 
-        //signup button
-//        val signUpButton: Button = findViewById(R.id.btn_signup)
-//        signUpButton.setOnClickListener {
-//            replaceFragment(userdashboard()) //
-//        }
+        binding.btnSignup.setOnClickListener {
+            val email = binding.btnEmail.text.toString().trim()
+            val password = binding.btnPsw.text.toString().trim()
+
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            } else {
+                createUser(email, password)
+            }
+        }
+
+        return binding.root
+    }
+
+    private fun createUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(requireContext(), "Signup successful!", Toast.LENGTH_SHORT).show()
+
+                    // Navigate back to login fragment
+                    val loginFragment = login()
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, login())
+                        .addToBackStack(null)
+                        .commit()
+
+                } else {
+                    Log.e("Signup", "Error: ${task.exception?.message}")
+                    Toast.makeText(requireContext(), "Signup failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                }
+            }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

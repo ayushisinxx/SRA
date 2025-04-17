@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.sra.R
 import com.example.sra.databinding.FragmentLoginBinding
+import com.example.sra.signup.signup
 import com.example.sra.userdashboard
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -25,12 +26,27 @@ class login : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //return inflater.inflate(R.layout.fragment_login, container, false)
-        _binding = FragmentLoginBinding.inflate(inflater, container,false)
-        return binding.root
-        auth = Firebase.auth
-        binding.btnLogin.setOnClickListener() {
+        // Inflate the layout using ViewBinding
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+        // Get an instance of FirebaseAuth
+        auth = FirebaseAuth.getInstance()
+
+        // Set up click listener
+        binding.btnLogin.setOnClickListener {
+            checkUser()
         }
+        // Sign Up Button Click
+        binding.btnSignup.setOnClickListener {
+            // Navigate to signup fragment
+            val signupFragment = signup()  // Make sure your signup fragment class is named correctly
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, signupFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        return binding.root
     }
     private fun checkUser() {
 
@@ -56,25 +72,20 @@ class login : Fragment() {
     // This function will update the UI as parameter passed form the checkUser
 
     private fun updateUI(user: FirebaseUser?) {
+        if (user != null) {
+            Toast.makeText(requireActivity(), "Login Successful", Toast.LENGTH_SHORT).show()
 
-        if(user != null){
-            Toast.makeText(this@login.requireActivity(), "Login", Toast.LENGTH_SHORT).show()
-
-//            parentFragmentManager.commit {
-//                setReorderingAllowed(true)
-//                replace(
-//                    R.id.fragment_container,
-//                    userdashboard::class.java,
-//                    null
-//                ) // Replace with your FragmentContainerView's ID and the new Fragment class
-//                addToBackStack(null)
-//                }
+            // Navigate to user_dashboard fragment
+            val dashboardFragment = userdashboard() // your target fragment
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, dashboardFragment)
+                .addToBackStack(null)
+                .commit()
+        } else {
+            Toast.makeText(requireActivity(), "Please enter valid credentials", Toast.LENGTH_SHORT).show()
         }
-        else{
-            Toast.makeText(this@login.requireActivity(), "Please enter valid credentials", Toast.LENGTH_SHORT).show()
-        }
-
     }
+
 
     // this will set the value of current user
     override fun onStart() {
@@ -86,6 +97,7 @@ class login : Fragment() {
             reload()
         }
     }
+
 
     private fun reload(){
     }
